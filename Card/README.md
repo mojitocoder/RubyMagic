@@ -19,5 +19,11 @@ RSpec
     + Create a Gemfile
     + Execute: bundle
 
++ rspec run automation:
+    + \lib
+    + \spec
+    + \spec\spec_helper.rb
+    + .rspec file
+
  
 
