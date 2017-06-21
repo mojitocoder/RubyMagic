@@ -11,6 +11,7 @@ class Card
             when :jack then 11
             when :queen then 12
             when :king then 13
+            when :ace then 14
             else rank
         end
     end
@@ -35,6 +36,32 @@ class Card
         self == other
     end
     
+    def inspect
+        #"<Card #{rank} #{suit}>"
+        to_s   
+    end
+
+    def to_s
+        id = if rank > 10
+        {
+            11 => "J",
+            12 => "Q",
+            13 => "K",
+            14 => "A"
+        }.fetch(rank)
+        else
+            rank.to_s
+        end
+
+        s = {
+        hearts: "♡ ",
+        spades: "♤ ",
+        diamonds: "♢ ",
+        clubs: "♧ ",
+        }
+
+        "#{id.upcase}#{s.fetch(suit)}"
+    end
 end
 
 
